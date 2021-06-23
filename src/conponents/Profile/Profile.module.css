@@ -1,0 +1,24 @@
+.content {
+  background-color: #0c0c48;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item{
+  width: 70%;
+  padding: 104px 0;
+  background-color: #109610;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+ h1{
+   color: #031129;
+ }
+
+
+
+
+ 

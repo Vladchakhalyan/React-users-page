@@ -1,0 +1,30 @@
+h2{
+    color: #031129;
+    margin-top: 10px ;
+}
+.button{
+    padding: 5px 20px;
+    background-color:#031129 ;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.button:hover{
+    background-color: white;
+    color:#031129 ;
+}
+.statusSpan{
+    padding: 3px;
+    background-color: #0c0c48;
+    color: white;
+    transition: .3s;
+    border-radius: 100px;
+}
+
+.statusSpan:hover{
+    color: white;
+    background-color: #0cff0c;
+}
