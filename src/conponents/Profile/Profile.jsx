@@ -1,7 +1,7 @@
-import React from "react";
-import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
-import s from "./Profile.module.css";
-import MyPagePost from "./MyPosts/MyPagePost";
+import React from 'react';
+import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
+import s from './Profile.module.css';
+import MyPagePost from './MyPosts/MyPagePost';
 
 const Profile = (props) => {
   return (

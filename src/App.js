@@ -1,6 +1,5 @@
 import { Component } from "react";
-import Nav from "./conponents/Nav/Nav.jsx";
-import DialogContaner from "./conponents/Dialogs/Message/DialogContaner.jsx";
+import Nav from "./conponents/Nav/Nav";
 import "./App.css";
 import { Route, withRouter } from "react-router-dom";
 import UsersContaner from "./conponents/Users/UsersContaner";
@@ -11,6 +10,7 @@ import { connect } from "react-redux";
 import { initializedPageApp } from "./redux/authApp";
 import { compose } from "redux";
 import Preloader from "./conponents/common/Prealoader/Preloader";
+import DialogContaner from "./conponents/Dialogs/Message/DialogContaner";
 
 class App extends Component {
   componentDidMount() {
@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   render() {
+    console.log({ ...this.props });
     if (!this.props.initialized) {
       return <Preloader />;
     }

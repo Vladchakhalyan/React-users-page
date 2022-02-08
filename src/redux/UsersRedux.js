@@ -1,16 +1,16 @@
-import { UsersApi } from "../API/api";
+import { UsersApi } from '../API/api';
 
-const FOLOW = "FOLOW";
-const UNFOLOW = "UNFOLOW";
-const SET_USERS = "SET_USERS";
-const SET_USERS_CH = "SET_USERS_CH";
-const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
-const IS_FETCHING = "IS_FETCHING";
-const IS_TOGGLE_FLUN = "IS_TOGGLE_FLUN";
+const FOLOW = 'FOLOW';
+const UNFOLOW = 'UNFOLOW';
+const SET_USERS = 'SET_USERS';
+const SET_USERS_CH = 'SET_USERS_CH';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const IS_FETCHING = 'IS_FETCHING';
+const IS_TOGGLE_FLUN = 'IS_TOGGLE_FLUN';
 
 let initialState = {
   users: [],
-  pageSize: 5,
+  pageSize: 2,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,

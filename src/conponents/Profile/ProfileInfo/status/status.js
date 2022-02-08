@@ -1,70 +1,56 @@
-import React from "react";
-import s from "../ProfileInfo.module.css";
-import m from "../ProfileInfo.module.css";
+import React, { useState, useEffect } from 'react';
+import s from '../ProfileInfo.module.css';
+import m from '../ProfileInfo.module.css';
 
-export class Status extends React.Component {
-  state = {
-    editMode: false,
-    status: this.props.status,
+export const Status = (props) => {
+  let [editMode, setEditMode] = useState(false);
+  let [status, setStatus] = useState(props.status);
+
+  useEffect(() => {
+    setStatus(props.status);
+  }, [props.status]);
+
+  const activateEditMode = () => {
+    setEditMode(true);
   };
 
-  activateEditMode = () => {
-    this.setState({
-      editMode: true,
-    });
+  const deactivateEditMode = () => {
+    setEditMode(false);
+    props.updateStatus(status);
   };
 
-  deactivateEditMode = () => {
-    this.setState({
-      editMode: false,
-    });
-    this.props.updateStatus(this.state.status);
+  const statusOnchange = (e) => {
+    setStatus(e.currentTarget.value);
   };
 
-  statusOnchange = (e) => {
-    this.setState({
-      status: e.currentTarget.value,
-    });
-  };
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.status !== this.props.status) {
-      this.setState({
-        status: this.state.status,
-      });
-    }
-  }
-
-  render() {
-    return (
-      <>
-        <h2 className={s.itemP}>
-          <b>STATUS</b>
-        </h2>
-        {!this.state.editMode && (
-          <div onDoubleClick={this.activateEditMode}>
-            <p>
-              <b>{this.props.status || "----"}</b>
-            </p>
-            <button className={m.button}>
-              <b>change status</b>
-            </button>
-          </div>
-        )}
-        {this.state.editMode && (
-          <div>
-            <input
-              autoFocus={true}
-              onBlur={this.deactivateEditMode}
-              value={this.state.status}
-              onChange={this.statusOnchange}
-            />
-            <span className={s.statusSpan}>
-              <i className="fas fa-check"></i>
-            </span>
-          </div>
-        )}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <h2 className={s.itemP}>
+        <b>STATUS</b>
+      </h2>
+      {!editMode && (
+        <div onDoubleClick={activateEditMode}>
+          <p>
+            <b>{props.status || '----'}</b>
+          </p>
+          <button className={m.button}>
+            <b>change status</b>
+          </button>
+        </div>
+      )}
+      {editMode && (
+        <div>
+          <input
+            autoFocus={true}
+            onBlur={deactivateEditMode}
+            value={status}
+            onChange={statusOnchange}
+          />
+          <span className={s.statusSpan}>
+            <i className='fas fa-check'></i>
+          </span>
+        </div>
+      )}
+    </>
+  );
+};

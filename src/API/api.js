@@ -1,10 +1,10 @@
-import * as axios from "axios";
+import * as axios from 'axios';
 
 let instacne = axios.create({
   withCredentials: true,
-  baseURL: "https://social-network.samuraijs.com/api/1.0/",
+  baseURL: 'https://social-network.samuraijs.com/api/1.0/',
   headers: {
-    "API-KEY": "d87504da-d8a7-4104-87b6-b2ba78f15176",
+    'API-KEY': 'd87504da-d8a7-4104-87b6-b2ba78f15176',
   },
 });
 
@@ -15,10 +15,10 @@ export const UsersApi = {
       .then((response) => response.data);
   },
   getUsers2(id) {
-    return instacne.delete(`follow/${id} `).then((response) => response.data);
+    return instacne.delete(`follow/${id}`).then((response) => response.data);
   },
   getUsers3(id) {
-    return instacne.post(`follow/${id} `).then((response) => response.data);
+    return instacne.post(`follow/${id}  `).then((response) => response.data);
   },
   getUsers4() {
     return instacne.get(`auth/me`).then((response) => response.data);

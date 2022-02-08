@@ -8,7 +8,7 @@ let initialState = {
 };
 
 const ADD_POST = "ADD_POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+// const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 
 const messageReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -22,9 +22,9 @@ const messageReducer = (state = initialState, action) => {
         ],
       };
     }
-    case UPDATE_NEW_POST_TEXT: {
-      return { ...state, adText: action.newText };
-    }
+    // case UPDATE_NEW_POST_TEXT: {
+    //   return { ...state, adText: action.newText };
+    // }
     default:
       return state;
   }

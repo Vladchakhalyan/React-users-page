@@ -1,10 +1,10 @@
-import React from "react";
-import d from "./Dialog.module.css";
-import Dialogitem from "./Dialogitem/Dialogitem";
-import Message from "./Message/Message.jsx";
-import { Field, reduxForm } from "redux-form";
-import { maxLengthCreatre, recuired } from "../common/validators/validator";
-import { Textarea } from "../common/FormsControls/formscontrols";
+import React from 'react';
+import d from './Dialog.module.css';
+import Dialogitem from './Dialogitem/Dialogitem';
+import Message from './Message/Message.jsx';
+import { Field, reduxForm } from 'redux-form';
+import { maxLengthCreatre, recuired } from '../common/validators/validator';
+import { Textarea } from '../common/FormsControls/formscontrols';
 
 let Dialog = (props) => {
   let addNewText = (values) => {
@@ -39,10 +39,10 @@ const FormTeaxtarea = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <Field
-        name={"textarea"}
+        name={'textarea'}
         component={Textarea}
         validate={[recuired, MXlght10]}
-        placeholder={"Massages"}
+        placeholder={'Massages'}
       />
       <button className={d.button}>
         <b> add</b>
@@ -51,7 +51,7 @@ const FormTeaxtarea = (props) => {
   );
 };
 const TextareaForm = reduxForm({
-  form: "textarea",
+  form: 'textarea',
 })(FormTeaxtarea);
 
 export default Dialog;

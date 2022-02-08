@@ -1,6 +1,6 @@
-import { loginApi } from "../API/api";
+import { loginApi } from '../API/api';
 
-const L_G = "L_G";
+const L_G = 'L_G';
 
 let initialState = {
   Login: null,
